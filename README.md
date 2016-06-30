@@ -30,9 +30,36 @@ Everytime you change the localization files (and when you first compile the clie
 
 By default, when you run the app in debug mode, you will join the *Demo Meeting* on http://test-install.blindsidenetworks.com/, but only if you open the session first in your browser. The app will never call *create*, it only knows how to handle *join*.
 
-In order to package the app for iOS, you will need a more recent version of Air SDK (Adobe Flash Builder 4.6 comes with Air SDK 3.1).
-To install the most recent Air SDK on Mac OS, you can follow this tutorial: http://jeffwinder.blogspot.com.br/2011/09/installing-adobe-air-3-sdk-in-flash.html (on Windows should be something similar).
+## App packaging
+To be able to deploy iOS App, you need to have the latest Flex SDK.
 
+### OS X
+After that you installed [Adobe Flash Builder 4.6](https://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5516&fileID=5535) you need to update the AIR SDK. Fortunaly you can do that by just executing this script:
+```shell
+./update-osx-air-sdk.sh
+```
+**Notice**
+
+> The AdobeAIRSDK.tbz2 included in the automated script is 22.0.0.153
+
+> Maybe there is an updated version here when you read this:
+>
+> http://www.adobe.com/devnet/air/air-sdk-download.html
+> 
+> so go there with your browser and download the latest sdk without the compiler
+
+> At the time of this writing the Adobe website has the following note:
+
+> Note: Flex users will need to download the original AIR SDK without the new compiler.
+
+> Download the Mac version and replace the one in this directory, then run split-adobe-air-sdk-before-github-push.sh before running update-osx-air-sdk.sh
+
+> After that push your modification to the repo
+
+Or if you want to do it the hard way manually, you can [follow this tutorial](http://jeffwinder.blogspot.com.br/2011/09/installing-adobe-air-3-sdk-in-flash.html)
+
+
+### Windows
 On windows you can follow this tutorial: 
 http://www.andygup.net/how-to-upgrade-your-air-sdk-in-flashbuilder-4-6/
 
