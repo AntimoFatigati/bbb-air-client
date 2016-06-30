@@ -15,7 +15,7 @@ Add extra arguments to Flex Compiler:
 * add the following as Additional compiler arguments:
 
 ```
--locale=en_US,pt_BR -source-path=./locale/{locale} -resource-bundle-list=used-resource-bundles.txt -allow-source-path-overlap=true
+-locale=en_US,pt_BR,it_IT -source-path=./locale/{locale} -resource-bundle-list=used-resource-bundles.txt -allow-source-path-overlap=true
 ```
 
 Include the Air Native Extensions (ANE) in the project:
