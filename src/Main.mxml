@@ -87,7 +87,9 @@
 				setupLogger();
 				resizeForSoftKeyboard = true;
 				//NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvokeEvent);
-				ResourceManager.getInstance().localeChain = LocaleUtil.sortLanguagesByPreference(['en_US', 'pt_BR'], Capabilities.languages, "en_US");
+				//#voismart change
+				//ResourceManager.getInstance().localeChain = LocaleUtil.sortLanguagesByPreference(['en_US', 'pt_BR'], Capabilities.languages, "en_US");
+				ResourceManager.getInstance().localeChain = LocaleUtil.sortLanguagesByPreference(['en_US', 'pt_BR','it_IT'], Capabilities.languages, "it_IT");
 			}
 			
 			/*
@@ -220,11 +222,11 @@
 		</s:layout>
 		<s:SkinnableContainer id="topActionBar"
 							  width="100%"
-							  height="{getStyle('toolBarHeight')}"
+							  height="{getStyle('toolBarHeight')}"  
 							  styleName="topToolBarStyle"
-							  verticalCenter="0">
-			<s:HGroup width="100%"
-					  height="100%">
+							  verticalCenter="0"
+							  >
+			<s:HGroup width="100%" height="100%" paddingTop="{getStyle('toolBarPaddingTop')}">
 				<s:Group>
 					<ui:NavigationButton id="profileBtn"
 										 styleName="profileButtonStyle topButtonStyle"
@@ -238,7 +240,8 @@
 				<s:Label id="pageName"
 						 styleName="pageNameStyle"
 						 width="100%"
-						 height="100%" />
+						 height="100%" 
+						  />
 				<ui:RecordingStatus id="recordingStatus"
 									styleName="recordingStatusIconStyle topButtonStyle"
 									visible="false" />

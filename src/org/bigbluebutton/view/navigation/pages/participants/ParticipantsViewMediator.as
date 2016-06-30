@@ -91,9 +91,13 @@ package org.bigbluebutton.view.navigation.pages.participants {
 			}
 			if (FlexGlobals.topLevelApplication.isTabletLandscape()) {
 				if (userUISession.currentPageDetails is User) {
-					view.list.setSelectedIndex(dataProvider.getItemIndex(userUISession.currentPageDetails), true);
+					//#voismart change
+					//view.list.setSelectedIndex(dataProvider.getItemIndex(userUISession.currentPageDetails), true);
+					view.list.selectedIndex = dataProvider.getItemIndex(userUISession.currentPageDetails);
 				} else {
-					view.list.setSelectedIndex(0, true);
+					//#voismart change
+					//view.list.setSelectedIndex(0, true);
+					view.list.selectedIndex= 0;
 				}
 			}
 			var tabletLandscape = FlexGlobals.topLevelApplication.isTabletLandscape();
@@ -137,7 +141,9 @@ package org.bigbluebutton.view.navigation.pages.participants {
 			dicUserIdtoUser[user.userID] = null;
 			setPageTitle();
 			if (FlexGlobals.topLevelApplication.isTabletLandscape() && userUISession.currentPageDetails == user) {
-				view.list.setSelectedIndex(0, true);
+				//#voismart change
+			//	view.list.setSelectedIndex(0, true);
+				view.list.selectedIndex= 0;
 			}
 		}
 		

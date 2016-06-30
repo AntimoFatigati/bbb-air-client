@@ -30,7 +30,6 @@
 					  verticalAlign="middle"
 					  horizontalAlign="right">
 				<s:Label width="100%"
-						 styleName="contentFontSize"
 						 text="{resourceManager.getString('resources', 'audioSettings.enableAudio')}" />
 				<s:ToggleSwitch id="enableAudio0" />
 			</s:HGroup>
@@ -45,7 +44,6 @@
 					  verticalAlign="middle"
 					  horizontalAlign="right">
 				<s:Label width="100%"
-						 styleName="contentFontSize"
 						 text="{resourceManager.getString('resources', 'audioSettings.enableMic')}" />
 				<s:ToggleSwitch id="enableMic0" />
 			</s:HGroup>
@@ -60,7 +58,6 @@
 					  verticalAlign="middle"
 					  horizontalAlign="right">
 				<s:Label width="100%"
-						 styleName="contentFontSize"
 						 text="{resourceManager.getString('resources', 'audioSettings.pushToTalk')}" />
 				<s:ToggleSwitch id="enablePushToTalk0" />
 			</s:HGroup>
@@ -77,7 +74,6 @@
 					  verticalAlign="middle"
 					  horizontalAlign="right">
 				<s:Label width="100%"
-						 styleName="contentFontSize"
 						 text="{resourceManager.getString('resources', 'audioSettings.micGain')}" />
 
 				<s:Rect id="micActivity0"

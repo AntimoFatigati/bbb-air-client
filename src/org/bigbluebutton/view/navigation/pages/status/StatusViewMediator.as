@@ -60,7 +60,9 @@ package org.bigbluebutton.view.navigation.pages.status {
 		private function selectMood(mood:String):void {
 			for (var i:Number = 0; i < view.moodList.dataProvider.length; i++) {
 				if (mood == view.moodList.dataProvider.getItemAt(i).signal) {
-					view.moodList.setSelectedIndex(i);
+					//#voismart change
+					//view.moodList.setSelectedIndex(i);
+					view.moodList.selectedIndex = i;
 					break;
 				}
 			}

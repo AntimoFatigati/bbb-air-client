@@ -3,11 +3,13 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 	import flash.events.Event;
 	import flash.events.StageOrientationEvent;
 	import flash.utils.Dictionary;
+	
 	import mx.collections.ArrayCollection;
 	import mx.core.FlexGlobals;
 	import mx.events.ResizeEvent;
 	import mx.resources.ResourceManager;
 	import mx.utils.ObjectUtil;
+	
 	import org.bigbluebutton.model.IUserSession;
 	import org.bigbluebutton.model.IUserUISession;
 	import org.bigbluebutton.model.User;
@@ -17,14 +19,19 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 	import org.bigbluebutton.view.navigation.pages.TransitionAnimationENUM;
 	import org.bigbluebutton.view.navigation.pages.splitsettings.SplitViewEvent;
 	import org.osflash.signals.ISignal;
+	
 	import robotlegs.bender.bundles.mvcs.Mediator;
+	
 	import spark.components.List;
 	import spark.events.IndexChangeEvent;
+	
+	
 	
 	public class ChatRoomsViewMediator extends Mediator {
 		
 		[Inject]
 		public var view:IChatRoomsView;
+	
 		
 		[Inject]
 		public var userSession:IUserSession;
@@ -65,6 +72,7 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 			list = view.list;
 			list.dataProvider = dataProvider;
 			list.addEventListener(IndexChangeEvent.CHANGE, onIndexChangeHandler);
+			
 			// userSession.userlist.userChangeSignal.add(userChanged);
 			// userSession.userList.userAddedSignal.add(newUserAdded);
 			chatMessagesSession.publicChat.chatMessageChangeSignal.add(refreshList);
@@ -94,19 +102,28 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 				//screen just rotated back to tablet mode from a user private chat.
 				var item:Object = getItemFromDataProvider(userUISession.currentPageDetails.userID);
 				if (item) {
-					view.list.setSelectedIndex(dataProvider.getItemIndex(item), true);
+				//#voismart change
+				//view.list.setSelectedIndex(dataProvider.getItemIndex(item), true);
+				 view.list.selectedIndex=dataProvider.getItemIndex(item);
+					
 				} else {
 					//private chat was not added in the list
 					eventDispatcher.dispatchEvent(new SplitViewEvent(SplitViewEvent.CHANGE_VIEW, PagesENUM.getClassfromName(PagesENUM.CHAT), userUISession.currentPageDetails, true))
 				}
 			} else if (userUISession.currentPageDetails && userUISession.currentPageDetails.hasOwnProperty("user") && userUISession.currentPageDetails.user) {
 				//screen also just rotated back to tablet mode from a user private chat.
-				view.list.setSelectedIndex(dataProvider.getItemIndex(getItemFromDataProvider(userUISession.currentPageDetails.user.userID)), true);
+				//#voismart change
+			    //view.list.setSelectedIndex(dataProvider.getItemIndex(getItemFromDataProvider(userUISession.currentPageDetails.user.userID)), true);
+				view.list.selectedIndex = dataProvider.getItemIndex(getItemFromDataProvider(userUISession.currentPageDetails.user.userID));
 			} else if (userUISession.currentPageDetails && userUISession.currentPageDetails.hasOwnProperty("button")) {
 				//screen just rotated back to tablet mode from selecparticipants.
-				view.list.setSelectedIndex(dataProvider.length - 1, true);
+				//#voismart change
+				//view.list.setSelectedIndex(dataProvider.length - 1, true);
+				view.list.selectedIndex = dataProvider.length - 1;
 			} else {
-				view.list.setSelectedIndex(0, true);
+				//#voismart change
+				//view.list.setSelectedIndex(0, true);
+				view.list.selectedIndex = 0;
 			}
 		}
 		
@@ -121,7 +138,9 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 				addChat({name: pcm.userName, publicChat: false, user: user, chatMessages: pcm.privateChat, userID: pcm.userID, online: true}, dataProvider.length - 1);
 				if (FlexGlobals.topLevelApplication.isTabletLandscape() && userUISession.currentPageDetails.userID == pcm.userID) {
 					pcm.privateChat.resetNewMessages();
-					view.list.setSelectedIndex(dataProvider.length - 2);
+					//#voismart change
+					//view.list.setSelectedIndex(dataProvider.length - 2);
+					view.list.selectedIndex= (dataProvider.length - 2);
 				}
 			}
 		}

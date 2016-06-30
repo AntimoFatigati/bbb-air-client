@@ -95,10 +95,13 @@ package org.bigbluebutton.view.navigation.pages.login {
 			if (Capabilities.isDebugger) {
 				//saveData.save("rooms", null);
 				// test-install server no longer works with 0.9 mobile client
-				//url = "bigbluebutton://test-install.blindsidenetworks.com/bigbluebutton/api/join?fullName=Air&meetingID=Demo+Meeting&password=ap&checksum=512620179852dadd6fe0665a48bcb852a3c0afac";
+			   // url = "bigbluebutton://test-install.blindsidenetworks.com/bigbluebutton/api/join?fullName=Air&meetingID=Demo+Meeting&password=ap&checksum=512620179852dadd6fe0665a48bcb852a3c0afac";
+			//	url = "bigbluebutton://192.168.1.246/bigbluebutton/api/join?fullName=User&meetingID=antimoroom&password=mp&redirect=true&checksum=d502541ef0b2b0a72806e0bbd6ea89a1de2af540";
+			//	url = "bigbluebutton://test-install.blindsidenetworks.com/bigbluebutton/api/join?fullName=Antimo&meetingID=conftest&password=mp&redirect=true&checksum=9bf1b101d3cee1c6ccbbf905ac047b132efa50c3";
+				//url = "bigbluebutton://192.168.1.34/webconference";
 				//url = "bigbluebutton://lab1.mconf.org/bigbluebut/api/join?fullName=User+4237921ton/api/join?fullName=Air+client&meetingID=Test+room+4&password=prof123&checksum=5805753edd08fbf9af50f9c28bb676c7e5241349"
 				//url = "bigbluebutton://143.54.10.103/bigbluebutton/api/join?fullName=User+4704407&meetingID=random-3458293&password=mp&redirect=true&checksum=9102efa4f55e8b920b7f14b1c6bcdee7e0bb9c62";
-				url = "bigbluebutton://143.54.10.103/bigbluebutton/api/join?fullName=User+3569058&meetingID=random-1143106&password=mp&redirect=true&checksum=41f67390d73ca6fa149842bf082eef72d628c041";
+				//url = "bigbluebutton://143.54.10.103/bigbluebutton/api/join?fullName=User+3569058&meetingID=random-1143106&password=mp&redirect=true&checksum=41f67390d73ca6fa149842bf082eef72d628c041";
 			}
 			if (!url) {
 				url = "";
