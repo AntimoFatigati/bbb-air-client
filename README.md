@@ -89,7 +89,7 @@ for windows launch brand.bat with brand name argument
 
 for example 
 ```shell
-brand.bat voismart"
+brand.bat voismart
 ```
 
 
