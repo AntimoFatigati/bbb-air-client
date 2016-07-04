@@ -66,3 +66,30 @@ http://www.andygup.net/how-to-upgrade-your-air-sdk-in-flashbuilder-4-6/
 **Important: you should download the original AIR SDK without the new compiler, or you will face a bunch of weird messages during project compilation.
 You can find it here: http://airdownload.adobe.com/air/win/download/latest/AdobeAIRSDK.zip
 
+### How to refactor app package name
+
+Edit src/Main-app.xml
+
+change :
+```xml
+	<id>com.voismart.VoiSmartCollaboration</id>
+	
+	<filename>VoiSmartCollaboration</filename>
+
+	<name>VoiSmartCollaboration</name>
+```
+with desired package name and re-build.
+
+
+### How change assets for brand
+
+Copy  folder  "brand"/assets in src/assets 
+
+for windows launch brand.bat with brand name argument 
+
+for example 
+```shell
+brand.bat voismart"
+```
+
+
