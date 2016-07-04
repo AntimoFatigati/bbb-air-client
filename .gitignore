@@ -18,6 +18,7 @@ bin-release-temp/
 *.log
 resources.swf
 Thumbs.db
+AdobeAIRSDK.tbz2
 *~
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
