@@ -85,7 +85,7 @@ with desired package name and re-build.
 
 Copy  folder  "brand"/assets in src/assets 
 
-Launch brand the brand script with brand name as argument 
+Launch the `brand` script with brand name as argument 
 
 #### Windows
 ```shell
