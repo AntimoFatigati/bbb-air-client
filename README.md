@@ -85,11 +85,15 @@ with desired package name and re-build.
 
 Copy  folder  "brand"/assets in src/assets 
 
-for windows launch brand.bat with brand name argument 
+Launch the `brand` script with brand name as argument 
 
-for example 
+#### Windows
 ```shell
 brand.bat voismart
 ```
 
+#### OS X
+```shell
+./brand voismart
+```
 
