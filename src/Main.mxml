@@ -86,13 +86,13 @@
 				setupContext();
 				setupLogger();
 				resizeForSoftKeyboard = true;
-				//NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvokeEvent);
+				NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvokeEvent);
 				//#voismart change
 				//ResourceManager.getInstance().localeChain = LocaleUtil.sortLanguagesByPreference(['en_US', 'pt_BR'], Capabilities.languages, "en_US");
 				ResourceManager.getInstance().localeChain = LocaleUtil.sortLanguagesByPreference(['en_US', 'pt_BR','it_IT'], Capabilities.languages, "it_IT");
 			}
 			
-			/*
+			
 			   public function onInvokeEvent(invocation:InvokeEvent):void
 			   {
 			   var traceString:String = "";
@@ -109,9 +109,9 @@
 			
 			   traceString += "url: "+url+"\n\n";
 			
-			   traceText.text += traceString;
+			   trace("onInvokeEvent in main "+traceString); 
 			   }
-			 */
+			 
 			/**
 			 * Sets up the Robotlegs context.
 			 */

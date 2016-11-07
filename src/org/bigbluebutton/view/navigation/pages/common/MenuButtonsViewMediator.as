@@ -6,6 +6,7 @@ package org.bigbluebutton.view.navigation.pages.common {
 	import flash.desktop.SystemIdleMode;
 	import flash.events.Event;
 	import flash.events.InvokeEvent;
+	//import flash.events.BrowserInvokeEvent;
 	import flash.events.MouseEvent;
 	import flash.events.StageOrientationEvent;
 	import flash.events.TouchEvent;
@@ -57,6 +58,7 @@ package org.bigbluebutton.view.navigation.pages.common {
 			NativeApplication.nativeApplication.addEventListener(Event.ACTIVATE, fl_Activate);
 			NativeApplication.nativeApplication.addEventListener(Event.DEACTIVATE, fl_Deactivate);
 			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvokeEvent);
+			//NativeApplication.nativeApplication.addEventListener(BrowserInvokeEvent.BROWSER_INVOKE, onBrowserInvoke);
 			view.pushToTalkButton.addEventListener(FlexEvent.BUTTON_DOWN, pushToTalkOn);
 			view.pushToTalkButton.addEventListener(MouseEvent.MOUSE_UP, pushToTalkOff);
 			view.pushToTalkButton.addEventListener(MouseEvent.MOUSE_OUT, pushToTalkOff);
@@ -112,24 +114,37 @@ package org.bigbluebutton.view.navigation.pages.common {
 		}
 		
 		private function onInvokeEvent(invocation:InvokeEvent):void {
+			trace("on invoke event xxxxxxxy "+invocation.arguments.length);
+			trace("invokation reason "+invocation.reason);
+			var url:String ="";
 			if (invocation.arguments.length > 0) {
-				var url:String = invocation.arguments[0].toString();
-				if (url.lastIndexOf("://") != -1) {
-					userSession.joinUrl = url;
-					if (userSession.mainConnection)
-						userSession.mainConnection.disconnect(true);
-					if (userSession.videoConnection)
-						userSession.videoConnection.disconnect(true);
-					if (userSession.voiceConnection)
-						userSession.voiceConnection.disconnect(true);
-					if (userSession.deskshareConnection)
-						userSession.deskshareConnection.disconnect(true);
-					FlexGlobals.topLevelApplication.mainshell.visible = false;
-					userUISession.popPage();
-					userUISession.pushPage(PagesENUM.LOGIN);
+				
+				url = invocation.arguments[0].toString();
+				userSession.joinUrl = url;
+				if (userSession.mainConnection){
+								
+					userSession.mainConnection.disconnect(true);
 				}
+				if (userSession.videoConnection){
+					
+					userSession.videoConnection.disconnect(true);
+				}
+				if (userSession.voiceConnection){
+					
+					userSession.voiceConnection.disconnect(true);}
+				if (userSession.deskshareConnection){
+					
+					userSession.deskshareConnection.disconnect(true);
+				}
+				//userUISession.popPage();
+				userUISession.pushPage(PagesENUM.LOGIN);
+				//FlexGlobals.topLevelApplication.mainshell.visible = false;
 			}
+			userSession.joinUrl = url;
+			
+		
 		}
+		
 		
 		private function loggingOutHandler():void {
 			loggingOut = true;
@@ -250,7 +265,9 @@ package org.bigbluebutton.view.navigation.pages.common {
 		 * Unsubscribe from listening for Deskshare Streaming Signal
 		 */
 		public override function destroy():void {
+			trace("destroy menubuttonmediator");
 			userSession.deskshareConnection.isStreamingSignal.remove(onDeskshareStreamChange);
+			//NativeApplication.nativeApplication.removeEventListener(InvokeEvent.INVOKE, onInvokeEvent);
 		/*userSession.userList.userChangeSignal.remove(userChangeHandler);*/
 		}
 		
