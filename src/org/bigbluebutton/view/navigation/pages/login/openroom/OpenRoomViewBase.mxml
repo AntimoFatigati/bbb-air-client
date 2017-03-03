@@ -9,10 +9,12 @@
 		<![CDATA[
 			import org.bigbluebutton.view.navigation.pages.PagesENUM;
 			import org.bigbluebutton.view.navigation.pages.TransitionAnimationENUM;
+			
 		]]>
 	</fx:Script>
+	
 
-
+	
 	<s:Group width="100%"
 			 height="100%">
 		<s:Group width="100%"
@@ -56,6 +58,15 @@
 					  styleName="userSettingsButtonStyle logoutButtonStyle contentFontSize" />
 			
 			<s:Spacer height="5%" />
+			<s:Label text=""
+					 width="90%"
+					 visible="true"
+					 textAlign="center"
+					 id="reasonLabel0"
+					 styleName="subContentFontSize" />
+					 
+					  
+			
 			<!--<ui:NavigationButton id="recentRoomsBtn"
 								 width="90%"
 								 label="{resourceManager.getString('resources', 'openRoom.showRecentRooms')}"

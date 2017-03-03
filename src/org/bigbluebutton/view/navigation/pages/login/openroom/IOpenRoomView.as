@@ -12,5 +12,6 @@ package org.bigbluebutton.view.navigation.pages.login.openroom {
 	public interface IOpenRoomView extends IView {
 		function get inputRoom():TextInput;
 		function get goButton():Button;
+		function get reasonLabel():Label;
 	}
 }
