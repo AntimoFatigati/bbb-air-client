@@ -115,7 +115,7 @@ package org.bigbluebutton.core {
 			enterSubservice.successSignal.add(afterEnter);
 			enterSubservice.unsuccessSignal.add(fail);
 			if (sessionToken) {
-				enterSubservice.enter(_config.application.host + "?" + sessionToken, _urlRequest);
+				enterSubservice.enter(_config.application.host + sessionToken, _urlRequest);
 			} else {
 				enterSubservice.enter(_config.application.host, _urlRequest);
 			}

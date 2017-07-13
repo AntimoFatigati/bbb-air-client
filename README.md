@@ -66,6 +66,14 @@ http://www.andygup.net/how-to-upgrade-your-air-sdk-in-flashbuilder-4-6/
 **Important: you should download the original AIR SDK without the new compiler, or you will face a bunch of weird messages during project compilation.
 You can find it here: http://airdownload.adobe.com/air/win/download/latest/AdobeAIRSDK.zip
 
+
+### For new version
+
+For new version, you download this .exe/.dmg http://flex.apache.org/installer.html and select:
+Apache Flex 4.14.1
+Adobe Air 23.0
+Flash Player 23.0
+
 ### How to refactor app package name
 
 Edit src/Main-app.xml

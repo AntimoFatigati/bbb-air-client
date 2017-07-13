@@ -30,7 +30,7 @@ package org.bigbluebutton.core {
 		public function getConfig(serverUrl:String, urlRequest:URLRequest):void {
 			var sessionToken = SessionToken.getSessionToken();
 			if (sessionToken) {
-				var configUrl:String = serverUrl + "/bigbluebutton/api/configXML?" + sessionToken;
+				var configUrl:String = serverUrl + "/bigbluebutton/api/configXML" + sessionToken;
 			} else {
 				var configUrl:String = serverUrl + "/bigbluebutton/api/configXML?a=" + new Date().time;
 			}
